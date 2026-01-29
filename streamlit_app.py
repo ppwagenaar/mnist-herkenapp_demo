@@ -40,6 +40,6 @@ if st.button("🔍 Voorspel"):
         col2.subheader(f"👉 Voorspelling: **2**")
         col2.write(f"Zekerheid: **50%**")
 
-        col2.st.image(img.resize((28, 28)), caption="Jouw tekening (28×28)")
+        col2.image(img.resize((28, 28)), caption="Jouw tekening (28×28)")
     else:
         st.warning("Teken eerst een cijfer!")
