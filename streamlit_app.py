@@ -4,15 +4,15 @@ from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
 # Pagina instellingen
+col1,col2 = st.columns(2)
 st.set_page_config(page_title="Cijferherkenning", layout="centered")
-st.title("✍️ Teken een cijfer (0–9)")
+col1.st.title("✍️ Teken een cijfer (0–9)")
 
 # Model laden
-col1,col2 = st.columns(2)
 
 # Canvas instellingen
 canvas_size = 280  # 10x upscale voor tekenen
-canvas = col1.st_canvas(
+canvas = st_canvas(
     fill_color="black",
     stroke_width=20,
     stroke_color="white",
