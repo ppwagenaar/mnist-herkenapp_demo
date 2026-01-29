@@ -8,11 +8,11 @@ st.set_page_config(page_title="Cijferherkenning", layout="centered")
 st.title("✍️ Teken een cijfer (0–9)")
 
 # Model laden
-
+col1,col2 = st.columns(2)
 
 # Canvas instellingen
 canvas_size = 280  # 10x upscale voor tekenen
-canvas = st_canvas(
+canvas = col1.st_canvas(
     fill_color="black",
     stroke_width=20,
     stroke_color="white",
@@ -37,9 +37,9 @@ if st.button("🔍 Voorspel"):
         processed_img = preprocess_image(img)
 
 
-        st.subheader(f"👉 Voorspelling: **2**")
-        st.write(f"Zekerheid: **50%**")
+        col2.st.subheader(f"👉 Voorspelling: **2**")
+        col2.st.write(f"Zekerheid: **50%**")
 
-        st.image(img.resize((140, 140)), caption="Jouw tekening (28×28)")
+        col2.st.image(img.resize((28, 28)), caption="Jouw tekening (28×28)")
     else:
         st.warning("Teken eerst een cijfer!")
