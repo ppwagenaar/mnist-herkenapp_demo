@@ -227,7 +227,7 @@ if st.button("🔍 Voorspel"):
         col2.write("Andere opties")
         for i in range(5):
             col2.write(f"{i}:{kans[i]*100}%")
-        for i in range(5:10):
+        for i in range(5,10):
             col3.write(f"{i}:{kans[i]*100}%")
         col2.image(img.resize((28, 28)), caption="Jouw tekening (28×28)")
     else:
