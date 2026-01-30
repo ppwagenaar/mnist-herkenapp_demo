@@ -216,8 +216,8 @@ def preprocess_image(img):
     return img_array
 
 if st.button("🔍 Voorspel"):
-    if canvas.image_data is not None:
-        img = Image.fromarray(canvas.image_data.astype("uint8"))
+    if col1.canvas.image_data is not None:
+        img = Image.fromarray(col1.canvas.image_data.astype("uint8"))
         processed_img = preprocess_image(img)
         getal, kans = voorspel_enkel_plaatje(processed_img, convolutionele_lagen,neuronen,neuronen_per_laag)
 
