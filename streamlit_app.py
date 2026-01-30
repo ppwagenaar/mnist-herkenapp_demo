@@ -189,7 +189,7 @@ def voorspel_enkel_plaatje(afb, convolutionele_lagen, neuronen, neuronen_per_laa
     return voorspelling, kans
 
 # Pagina instellingen
-col1,col2 = st.columns(2)
+col1,col2,col3 = st.columns(3)
 st.set_page_config(page_title="Cijferherkenning", layout="centered")
 col1.title("✍️ Teken een cijfer (0–9)")
 
@@ -197,7 +197,7 @@ col1.title("✍️ Teken een cijfer (0–9)")
 
 # Canvas instellingen
 canvas_size = 280  # 10x upscale voor tekenen
-canvas = st_canvas(
+col1.canvas = st_canvas(
     fill_color="black",
     stroke_width=20,
     stroke_color="white",
@@ -225,8 +225,10 @@ if st.button("🔍 Voorspel"):
         col2.subheader(f"👉 Voorspelling: **{getal}**")
         col2.write(f"Zekerheid: **{kans[getal]*100}%**")
         col2.write("Andere opties")
-        for i in range(10):
+        for i in range(5):
             col2.write(f"{i}:{kans[i]*100}%")
+        for i in range(5:10):
+            col3.write(f"{i}:{kans[i]*100}%")
         col2.image(img.resize((28, 28)), caption="Jouw tekening (28×28)")
     else:
         st.warning("Teken eerst een cijfer!")
