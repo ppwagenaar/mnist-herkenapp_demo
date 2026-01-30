@@ -184,7 +184,7 @@ def voorspel_enkel_plaatje(afb, convolutionele_lagen, neuronen, neuronen_per_laa
 
     # Softmax
     kans = softmax_over_laag(input.T)
-    voorspelling = int(cp.argmax(probs))
+    voorspelling = int(cp.argmax(kans))
 
     return voorspelling, kans
 
