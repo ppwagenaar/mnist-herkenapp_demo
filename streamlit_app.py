@@ -223,7 +223,7 @@ if st.button("🔍 Voorspel"):
 
 
         col2.subheader(f"👉 Voorspelling: **{getal}**")
-        col2.write(f"Zekerheid: **{kans[getal]*100}%**")
+        col2.write(f"Zekerheid: **{kans[getal[0]]*100}%**")
 
         col2.image(img.resize((28, 28)), caption="Jouw tekening (28×28)")
     else:
