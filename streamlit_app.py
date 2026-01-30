@@ -224,7 +224,9 @@ if st.button("🔍 Voorspel"):
 
         col2.subheader(f"👉 Voorspelling: **{getal}**")
         col2.write(f"Zekerheid: **{kans[getal]*100}%**")
-        col2.write(f"Andere opties: 0:{kans[0]}\n1:{kans[1]}\n2:{kans[2]}\n3:{kans[3]}\n4:{kans[4]}\n5:{kans[5]}\n6:{kans[6]}\n7:{kans[7]}\n8:{kans[8]}\n9:{kans[9]}\n")
+        col2.write("Andere opties")
+        for i in range(10):
+            col2.write(f"{i}:{kans[i]*100}%")
         col2.image(img.resize((28, 28)), caption="Jouw tekening (28×28)")
     else:
         st.warning("Teken eerst een cijfer!")
