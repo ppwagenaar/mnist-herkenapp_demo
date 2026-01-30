@@ -6,7 +6,6 @@ import numpy as cp
 import time
 import math
 from numpy.lib.stride_tricks import sliding_window_view
-from scipy import signal
 import json
 class neuron:
     def __init__(self,neuronen_vorige_laag:int,laatste_laag=False):
